@@ -8,10 +8,6 @@ export default function UserInfo() {
     logOut();
   }
 
-  if (!tokenData) {
-    return <></>;
-  }
-
   return (
     <>
       <h4>Access Token</h4>
