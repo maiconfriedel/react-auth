@@ -2,23 +2,14 @@ import { useContext } from "react";
 import { AuthContext } from "react-oauth2-code-pkce";
 
 export default function UserInfo() {
-  const { token, tokenData, logOut, login, loginInProgress, error } =
-    useContext(AuthContext);
+  const { token, tokenData, logOut } = useContext(AuthContext);
 
   function handleLogout() {
     logOut();
   }
 
-  if (loginInProgress) {
-    return <div>Loading....</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
   if (!tokenData) {
-    return <button onClick={() => login()}>Login</button>;
+    return <></>;
   }
 
   return (
